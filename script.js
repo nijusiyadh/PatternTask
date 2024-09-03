@@ -1,6 +1,8 @@
 const containers = document.querySelector(".containers");
 const numbers = document.querySelector(".numbers");
 const guidecontaier = document.querySelector(".guide");
+const intro = document.querySelector(".intro");
+const startBtn = document.querySelector(".start");
 
 const numberOfcontainers = 3;
 const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -8,6 +10,18 @@ const defalutSelectedContainer = 1;
 let popingContainer = 2;
 let selectedContainer = defalutSelectedContainer;
 let selectedNumberArray = [];
+
+const playIntro = () => {
+  setTimeout(() => {
+    intro.style.transform = "translateY(-100%)";
+  }, 900);
+};
+
+// playIntro();
+
+startBtn.addEventListener("click", (e) => {
+  playIntro();
+});
 
 const displayNumberInContainer = (inputContainer, numberArraySelected) => {
   const container = document.querySelector(`.container-${inputContainer}`);
